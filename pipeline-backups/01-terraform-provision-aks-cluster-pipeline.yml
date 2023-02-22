@@ -42,7 +42,7 @@ stages:
           backendServiceArm: 'terraform-aks-azurerm-svc-con'
           backendAzureRmResourceGroupName: 'DefaultResourceGroup-EUS'
           backendAzureRmStorageAccountName: 'azert9874y'
-          backendAzureRmContainerName: 'tfstatefiles'
+          backendAzureRmContainerName: 'gta'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
       - task: TerraformCLI@0
