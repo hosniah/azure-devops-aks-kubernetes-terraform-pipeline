@@ -83,9 +83,9 @@ stages:
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-aks-azurerm-svc-con'
-                backendAzureRmResourceGroupName: 'terraform-storage-rg'
-                backendAzureRmStorageAccountName: 'terraformstatexlrwdrzs'
-                backendAzureRmContainerName: 'tfstatefiles'
+                backendAzureRmResourceGroupName: 'terraform-storage-rgDefaultResourceGroup-EUS'
+                backendAzureRmStorageAccountName: 'azert9874y'
+                backendAzureRmContainerName: 'gta'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
                 allowTelemetryCollection: false
             - task: TerraformCLI@0
