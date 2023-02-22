@@ -83,7 +83,7 @@ stages:
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 backendType: 'azurerm'
                 backendServiceArm: 'terraform-aks-azurerm-svc-con'
-                backendAzureRmResourceGroupName: 'terraform-storage-rgDefaultResourceGroup-EUS'
+                backendAzureRmResourceGroupName: 'DefaultResourceGroup-EUS'
                 backendAzureRmStorageAccountName: 'azert9874y'
                 backendAzureRmContainerName: 'gta'
                 backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
