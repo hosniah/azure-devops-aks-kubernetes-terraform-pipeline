@@ -39,7 +39,7 @@ stages:
           command: 'init'
           workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
           backendType: 'azurerm'
-          backendServiceArm: 'azrmcnx'
+          backendServiceArm: 'fixedcnx'
           backendAzureRmResourceGroupName: 'gta_group'
           backendAzureRmStorageAccountName: 'gtastorageaccount'
           backendAzureRmContainerName: 'gtacontainer'
@@ -74,7 +74,7 @@ stages:
                 command: 'init'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
                 backendType: 'azurerm'
-                backendServiceArm: 'azrmcnx'
+                backendServiceArm: 'fixedcnx'
                 backendAzureRmResourceGroupName: 'gta_group'
                 backendAzureRmStorageAccountName: 'gtastorageaccount'
                 backendAzureRmContainerName: 'gtacontainer'
@@ -85,7 +85,7 @@ stages:
               inputs:
                 command: 'plan'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
-                environmentServiceName: 'azrmcnx'
+                environmentServiceName: 'fixedcnx'
                 commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEV_ENVIRONMENT) -out $(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
             - task: TerraformCLI@0
@@ -93,6 +93,6 @@ stages:
               inputs:
                 command: 'apply'
                 workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
-                environmentServiceName: 'azrmcnx'
+                environmentServiceName: 'fixedcnx'
                 commandOptions: '$(Pipeline.Workspace)/terraform-manifests-out/$(DEV_ENVIRONMENT)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
