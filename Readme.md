@@ -113,12 +113,12 @@ git add .
 git commit -am "First Commit"
 
 # Add Remote Origin and Push to Remote Repo
-git remote add origin https://github.com/stacksimplify/azure-devops-aks-kubernetes-terraform-pipeline.git
+git remote add origin https://github.com/hosniah/azure-devops-aks-kubernetes-terraform-pipeline.git
 git push --set-upstream origin master 
 
 # Verify the same on Github Repository
 Refersh browser for Repo you have created
-Example: https://github.com/stacksimplify/azure-devops-aks-kubernetes-terraform-pipeline.git
+Example: https://github.com/hosniah/azure-devops-aks-kubernetes-terraform-pipeline.git
 ```     
 
 
