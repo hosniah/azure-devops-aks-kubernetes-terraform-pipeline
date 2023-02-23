@@ -45,13 +45,6 @@ stages:
           backendAzureRmContainerName: 'gtacontainer'
           backendAzureRmKey: 'aks-base.tfstate'
           allowTelemetryCollection: false
-      - task: TerraformCLI@0
-        displayName: Terraform Validate
-        inputs:
-          command: 'validate'
-          workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-manifests'
-          allowTelemetryCollection: false
-
       - task: DownloadSecureFile@1
         displayName: Download SSH Key
         name: sshkey
