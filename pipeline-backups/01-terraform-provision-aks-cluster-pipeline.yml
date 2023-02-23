@@ -57,18 +57,7 @@ stages:
         name: sshkey
         inputs:
           secureFile: 'aks-terraform-devops-ssh-key-ububtu.pub'
-      - task: TerraformCLI@0
-        displayName: Terraform Init
-        inputs:
-          command: 'init'
-          workingDirectory: '$(Pipeline.Workspace)/terraform-manifests-out'
-          backendType: 'azurerm'
-          backendServiceArm: 'fixedcnx'
-          backendAzureRmResourceGroupName: 'gta_group'
-          backendAzureRmStorageAccountName: 'gtastorageaccount'
-          backendAzureRmContainerName: 'gtacontainer'
-          backendAzureRmKey: 'aks-$(DEV_ENVIRONMENT).tfstate'
-          allowTelemetryCollection: false
+
       - task: TerraformCLI@0
         displayName: Terraform Plan
         inputs:
